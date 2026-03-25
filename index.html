@@ -1,39 +1,128 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dscarwash77</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; padding: 20px; background: #f4f4f4; margin: 0; }
-        .card { background: white; padding: 25px; border-radius: 15px; max-width: 450px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #0070f3; margin-bottom: 5px; }
-        .btn { display: block; padding: 15px; margin: 10px 0; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; font-size: 18px; }
-        .tel { background: #28a745; }
-        .ws { background: #25D366; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
-        button { width: 100%; padding: 15px; background: #0070f3; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 18px; }
-        hr { border: 0; height: 1px; background: #eee; margin: 20px 0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dscarwash77</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #0070f3;
+}
+
+.btn {
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.call { background: #28a745; }
+.whatsapp { background: #25D366; }
+.reserve { background: #0070f3; }
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #0070f3;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+small {
+    color: gray;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="card">
-        <h1>Dscarwash77 🧼</h1>
-        <p>Lavage automobile professionnel</p>
-        
-        <a href="tel:+33623323250" class="btn tel">📞 Appeler le 06 23 32 32 50</a>
-        <a href="https://wa.me/33623323250" class="btn ws">💬 WhatsApp</a>
+<div class="container">
 
-        <hr>
+<div class="card">
 
-        <form action="https://formsubmit.co/dscarwash77@gmail.com" method="POST">
-            <h3>Réservation par mail :</h3>
-            <input type="email" name="email" placeholder="Votre adresse email" required>
-            <textarea name="message" rows="4" placeholder="Modèle voiture, date souhaitée, lieu..." required></textarea>
-            <button type="submit">Envoyer la demande</button>
-        </form>
-    </div>
+<h1>Dscarwash77 🧼</h1>
+<p>Lavage automobile professionnel</p>
+
+<p><strong>📅 Lundi au Samedi</strong></p>
+<p>⏰ 9h00 - 18h00</p>
+
+<a href="tel:+33623323250" class="btn call">📞 Appeler : 06 23 32 32 50</a>
+<a href="https://wa.me/33623323250" class="btn whatsapp">💬 WhatsApp</a>
+
+<a href="#form" class="btn reserve">📅 Réserver maintenant</a>
+
+<hr>
+
+<form id="form" action="https://formsubmit.co/dscarwash77@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Nouvelle réservation Dscarwash77">
+
+<h3>Réservation</h3>
+
+<input type="text" name="nom" placeholder="Votre nom" required>
+<input type="email" name="email" placeholder="Votre email" required>
+<input type="tel" name="telephone" placeholder="Votre téléphone" required>
+
+<label>Date souhaitée :</label>
+<input type="date" name="date" required>
+
+<label>Heure souhaitée :</label>
+<input type="time" name="heure" required>
+
+<textarea name="message" rows="4" placeholder="Type de voiture, lieu, lavage souhaité..." required></textarea>
+
+<button type="submit">Envoyer la réservation</button>
+
+</form>
+
+<p><small>Votre demande sera envoyée directement sur votre email : dscarwash77@gmail.com</small></p>
+
+</div>
+
+</div>
 
 </body>
 </html>
