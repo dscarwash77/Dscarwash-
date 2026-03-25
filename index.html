@@ -1,30 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dscarwash77 - Lavage Auto</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        .btn-call { display: inline-block; background-color: #28a745; color: white; padding: 20px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.4rem; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .btn-whatsapp { display: inline-block; background-color: #25d366; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 10px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Dscarwash77 🧼</h1>
-        <p>Lavage auto professionnel à domicile ou sur rdv.</p>
-        
-        <div style="margin-top: 30px;">
-            <p style="font-weight: bold;">Prendre rendez-vous immédiatement :</p>
-            <a href="tel:0623323250" class="btn-call">📞 Appeler le 06 23 32 32 50</a>
-            <br><br>
-            <a href="https://wa.me/33623323250" class="btn-whatsapp">💬 Message WhatsApp</a>
-        </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dscarwash77</title>
 
-        <p style="margin-top: 40px; color: #666;">📍 Secteur 77 et alentours</p>
-    </div>
+<style>
+body { font-family: Arial; background:#f4f4f4; text-align:center; margin:0;}
+.container { max-width:500px; margin:auto; padding:20px;}
+.card { background:white; padding:25px; border-radius:15px;}
+.btn { display:block; padding:15px; margin:10px 0; border-radius:10px; color:white; text-decoration:none;}
+.call{background:#28a745;}
+.whatsapp{background:#25D366;}
+.reserve{background:#0070f3;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<h1>Dscarwash77 🧼</h1>
+<p>Lavage automobile professionnel</p>
+
+<p>Lundi au Samedi</p>
+<p>9h - 18h</p>
+
+<a href="tel:+33623323250" class="btn call">📞 Appeler</a>
+<a href="https://wa.me/33623323250" class="btn whatsapp">💬 WhatsApp</a>
+
+<button class="btn reserve" onclick="goForm()">📅 Réserver</button>
+
+<br><br>
+
+<form id="form" action="https://formsubmit.co/dscarwash77@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" placeholder="Nom" required>
+<input type="email" placeholder="Email" required>
+<input type="tel" placeholder="Téléphone" required>
+
+<input type="date" required>
+<input type="time" required>
+
+<textarea placeholder="Détails..." required></textarea>
+
+<button type="submit">Envoyer</button>
+
+</form>
+
+</div>
+</div>
+
+<script>
+function goForm(){
+document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
 </body>
 </html>
