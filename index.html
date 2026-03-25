@@ -1,15 +1,58 @@
-<form action="https://formspree.io/f/mqakpbgz" method="POST">
-  <label>
-    Votre adresse e-mail :
-    <input type="email" name="email" required>
-  </label>
-  <br>
-  <label>
-    Votre message :
-    <textarea name="message" required></textarea>
-  </label>
-  <br>
-  <button type="submit">Envoyer</button>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dscarwash77 - Réservation Lavage Auto</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #0070f3; margin-bottom: 10px; }
+        p { text-align: center; color: #666; margin-bottom: 25px; }
+        
+        .btn-call { display: block; background-color: #28a745; color: white; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 15px; font-size: 18px; }
+        .btn-whatsapp { display: block; background-color: #25D366; color: white; padding: 15px; text-decoration: none; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 25px; font-size: 18px; }
+        
+        hr { border: 0; height: 1px; background: #eee; margin: 25px 0; }
+        
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+        
+        .btn-submit { background-color: #0070f3; color: white; border: none; padding: 15px; border-radius: 10px; width: 100%; cursor: pointer; font-size: 18px; font-weight: bold; transition: 0.3s; }
+        .btn-submit:hover { background-color: #005bc1; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dscarwash77 🧼</h1>
+        <p>Lavage auto professionnel à votre service</p>
+
+        <a href="tel:+33623323250" class="btn-call">📞 Appeler le 06 23 32 32 50</a>
+        <a href="https://wa.me/33623323250" class="btn-whatsapp">💬 WhatsApp : 06 23 32 32 50</a>
+
+        <hr>
+
+        <form action="https://formsubmit.co/dscarwash77@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nouvelle réservation Dscarwash77 !">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://dscarwash77.vercel.app">
+
+            <h3>Formulaire de réservation :</h3>
+            
+            <label for="email">Votre adresse e-mail :</label>
+            <input type="email" name="email" id="email" placeholder="votre@email.com" required>
+
+            <label for="message">Détails (Modèle voiture, date souhaitée, ville) :</label>
+            <textarea name="message" id="message" rows="5" placeholder="Bonjour, je souhaite un lavage pour..." required></textarea>
+
+            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+        </form>
+    </div>
+
+</body>
+</html>
+
 </form>
 <!DOCTYPE html>
 <html lang="fr">
