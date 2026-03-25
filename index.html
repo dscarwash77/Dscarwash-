@@ -11,3 +11,49 @@
   <br>
   <button type="submit">Envoyer</button>
 </form>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dscarwash - Réservation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1a1a1a; }
+        .btn-call { display: block; background-color: #28a745; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 20px; font-size: 18px; }
+        .btn-whatsapp { display: block; background-color: #25D366; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 30px; font-size: 18px; }
+        hr { border: 0; height: 1px; background: #ddd; margin: 30px 0; }
+        form { text-align: left; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        .btn-submit { background-color: #0070f3; color: white; border: none; padding: 15px; border-radius: 8px; width: 100%; cursor: pointer; font-size: 18px; font-weight: bold; }
+        .btn-submit:hover { background-color: #005bc1; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dscarwash 🧼</h1>
+        <p>Réservez votre lavage auto rapidement :</p>
+
+        <a href="tel:+33623323250" class="btn-call">📞 Appeler le 06 23 32 32 50</a>
+        <a href="https://wa.me/33623323250" class="btn-whatsapp">💬 Réserver via WhatsApp</a>
+
+        <hr>
+
+        <form action="https://formspree.io/f/mqakpbgz" method="POST">
+            <h3>Ou envoyez un message :</h3>
+            
+            <label>Votre adresse e-mail :</label>
+            <input type="email" name="email" placeholder="votre@email.com" required>
+
+            <label>Détails de la réservation (Modèle auto, date, lieu) :</label>
+            <textarea name="message" rows="5" placeholder="Ex: Bonjour, je souhaite un lavage complet pour une Golf vendredi à 14h..." required></textarea>
+
+            <button type="submit" class="btn-submit">Envoyer la demande</button>
+        </form>
+    </div>
+
+</body>
+</html>
