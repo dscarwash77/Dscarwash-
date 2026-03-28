@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dscarwash - Lavage Auto 77</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Dscarwash - Nettoyage auto à domicile 77/89/45</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #000000;
@@ -17,135 +17,183 @@
             --font-body: 'Poppins', sans-serif;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-color); color: var(--text-white); font-family: var(--font-body); line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-white); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
         
-        header { padding: 20px; border-bottom: 1px solid #1A1A1A; text-align: left; }
-        .logo-text { color: var(--main-red); font-size: 26px; font-family: var(--font-title); font-weight: bold; }
-        .sub-logo-text { color: var(--text-gray); font-size: 12px; display: block; }
+        /* HEADER */
+        header { padding: 20px; border-bottom: 1px solid #1A1A1A; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(0,0,0,0.9); z-index: 1000; }
+        .logo-text { color: var(--main-red); font-size: 24px; font-family: var(--font-title); font-weight: bold; }
+        .sub-logo { font-size: 10px; color: var(--text-gray); display: block; margin-top: -5px; }
+
+        /* SECTIONS */
+        .section { padding: 60px 20px; text-align: center; max-width: 1000px; margin: 0 auto; }
+        .section-subtitle { color: var(--main-red); text-transform: uppercase; font-size: 13px; font-weight: 600; letter-spacing: 2px; margin-bottom: 10px; }
+        .section-title { font-family: var(--font-title); font-size: 32px; margin-bottom: 40px; }
+
+        /* FORMULES */
+        .formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .formula-card { background: var(--card-bg); border: 1px solid #1A1A1A; border-radius: 15px; padding: 30px; text-align: left; position: relative; transition: 0.3s; }
+        .formula-card.popular { border-color: var(--main-red); box-shadow: 0 0 15px rgba(227, 28, 44, 0.2); }
+        .badge { background: var(--main-red); color: white; font-size: 10px; padding: 4px 10px; border-radius: 20px; position: absolute; top: 15px; right: 15px; }
+        .formula-name { font-size: 20px; font-weight: 600; margin-bottom: 5px; }
+        .formula-price { font-size: 30px; font-weight: 700; color: var(--main-red); margin-bottom: 20px; }
+        .formula-list { list-style: none; color: var(--text-gray); font-size: 14px; }
+        .formula-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .formula-list li::before { content: "✓"; color: var(--main-red); font-weight: bold; }
+
+        /* TÉMOIGNAGES */
+        .testimonial-container { display: flex; flex-direction: column; gap: 20px; }
+        .testimonial-card { background: #050505; border-radius: 15px; padding: 25px; text-align: left; border: 1px solid #1A1A1A; }
+        .stars { color: var(--main-red); margin-bottom: 15px; }
+        .quote { font-style: italic; color: var(--text-gray); margin-bottom: 15px; }
+        .client { font-weight: 600; }
+        .car { font-size: 12px; color: var(--main-red); }
+
+        /* CONTACT & FORMULAIRE */
+        .contact-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; }
+        .contact-info-item { display: flex; gap: 15px; margin-bottom: 25px; }
+        .icon-box { width: 45px; height: 45px; background: var(--card-bg); border-radius: 10px; display: flex; justify-content: center; align-items: center; color: var(--main-red); font-size: 20px; border: 1px solid #1A1A1A; }
         
-        .section { padding: 50px 20px; text-align: center; border-bottom: 1px solid #1A1A1A; }
-        .section-subtitle { color: var(--dark-red); text-transform: uppercase; font-size: 13px; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
-        .section-title { font-family: var(--font-title); font-size: 30px; margin-bottom: 30px; }
+        .form-box { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #1A1A1A; }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 12px; color: var(--text-gray); margin-bottom: 5px; }
+        .input-group input, .input-group select, .input-group textarea { width: 100%; padding: 12px; background: #000; border: 1px solid #1A1A1A; color: white; border-radius: 8px; font-family: inherit; }
+        .btn-submit { width: 100%; padding: 15px; background: var(--main-red); border: none; color: white; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #b31622; }
 
-        /* SECTION FORMULES */
-        .formula-grid { display: flex; flex-direction: column; gap: 20px; max-width: 500px; margin: 0 auto; }
-        .formula-card { background: var(--card-bg); border: 1px solid #1A1A1A; border-radius: 12px; padding: 25px; text-align: left; transition: 0.3s; }
-        .formula-card:hover { border-color: var(--main-red); }
-        .formula-name { color: var(--main-red); font-size: 20px; font-weight: 600; margin-bottom: 10px; }
-        .formula-price { font-size: 24px; font-weight: 700; margin-bottom: 15px; }
-        .formula-list { font-size: 14px; color: var(--text-gray); list-style: "✓ "; padding-left: 20px; }
-        .formula-list li { margin-bottom: 8px; }
+        footer { padding: 40px; border-top: 1px solid #1A1A1A; text-align: center; color: var(--text-gray); font-size: 12px; }
 
-        /* SECTION TÉMOIGNAGES */
-        .testimonial-card { background: #050505; border: 1px solid #1A1A1A; border-radius: 12px; padding: 25px; text-align: left; margin-bottom: 20px; max-width: 500px; margin-inline: auto; }
-        .stars { color: var(--main-red); margin-bottom: 10px; font-size: 18px; }
-        .client-info { font-weight: 600; font-size: 14px; margin-top: 15px; }
-
-        /* CONTACT & DEVIS */
-        .contact-list { text-align: left; max-width: 500px; margin: 0 auto 30px; }
-        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-        .contact-icon-box { width: 45px; height: 45px; background: var(--card-bg); border: 1px solid #1A1A1A; border-radius: 8px; display: flex; justify-content: center; align-items: center; color: var(--main-red); font-size: 20px; }
-        .contact-value { font-size: 17px; font-weight: 500; color: white; text-decoration: none; }
-
-        .form-container { background-color: var(--card-bg); border: 1px solid #1A1A1A; border-radius: 12px; padding: 30px; text-align: left; max-width: 500px; margin: 0 auto; }
-        .form-group { margin-bottom: 15px; }
-        .form-label { display: block; margin-bottom: 5px; font-size: 13px; color: var(--text-gray); }
-        .form-input, .form-select, .form-textarea { width: 100%; padding: 12px; background: #000; border: 1px solid #1A1A1A; color: white; border-radius: 8px; font-size: 15px; }
-        .submit-btn { width: 100%; padding: 16px; background: var(--main-red); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px; }
-
-        footer { padding: 40px 20px; text-align: center; color: var(--text-gray); font-size: 12px; }
+        @media (max-width: 600px) {
+            .section-title { font-size: 26px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="logo-text">Dscarwash</span>
-        <span class="sub-logo-text">Lavage auto professionnel à domicile 77/89/45</span>
+        <div>
+            <span class="logo-text">Dscarwash</span>
+            <span class="sub-logo">Sud 77 / 89 / 45</span>
+        </div>
+        <a href="tel:0623323250" style="background: var(--main-red); color:white; padding: 8px 15px; border-radius: 5px; font-size: 13px; font-weight: 600; text-decoration: none;">Appeler</a>
     </header>
 
     <section class="section">
-        <p class="section-subtitle">NOS SERVICES</p>
-        <h2 class="section-title">Nos Formules</h2>
+        <p class="section-subtitle">TARIFS</p>
+        <h2 class="section-title">Choisissez votre formule</h2>
+        
         <div class="formula-grid">
             <div class="formula-card">
-                <p class="formula-name">Formule Express</p>
-                <p class="formula-price">Dès 40€</p>
+                <p class="formula-name">Confort Express</p>
+                <p class="formula-price">60€</p>
                 <ul class="formula-list">
-                    <li>Aspiration complète</li>
-                    <li>Nettoyage des plastiques</li>
-                    <li>Nettoyage vitres intérieures</li>
+                    <li>Nettoyage intérieur complet</li>
+                    <li>Dépoussiérage soigné</li>
+                    <li>Plastiques nettoyés</li>
+                    <li>Vitres intérieures</li>
                 </ul>
             </div>
-            <div class="formula-card">
-                <p class="formula-name">Formule Excellence</p>
-                <p class="formula-price">Dès 80€</p>
+
+            <div class="formula-card popular">
+                <span class="badge">Populaire</span>
+                <p class="formula-name">Prestige Intérieur</p>
+                <p class="formula-price">110€</p>
                 <ul class="formula-list">
-                    <li>Formule Express +</li>
-                    <li>Shampoing sièges ou tapis</li>
-                    <li>Nettoyage jantes et pneus</li>
-                    <li>Brillant plastiques</li>
+                    <li>Formule Confort incluse</li>
+                    <li>Shampoing sièges & tapis</li>
+                    <li>Injecteur / Extracteur</li>
+                    <li>Entretien cuir / alcantara</li>
                 </ul>
+            </div>
+
+            <div class="formula-card">
+                <p class="formula-name">Extérieur Classique</p>
+                <p class="formula-price">45€</p>
+                <ul class="formula-list">
+                    <li>Lavage main complet</li>
+                    <li>Prélavage soigné</li>
+                    <li>Nettoyage jantes</li>
+                    <li>Dressing pneus</li>
+                </ul>
+            </div>
+        </div>
+        <p style="font-size: 12px; color: var(--text-gray);">* Tarifs indicatifs pour citadines. Devis gratuit pour SUV et utilitaires.</p>
+    </section>
+
+    <section class="section" style="background: #020202;">
+        <p class="section-subtitle">AVIS CLIENTS</p>
+        <h2 class="section-title">Ce qu'ils en pensent</h2>
+        
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Service impeccable à domicile. Ma voiture est comme neuve pour la revente. Je recommande vivement !"</p>
+                <p class="client">Marc D. <span class="car">• Mercedes Classe E</span></p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="quote">"Le nettoyage des sièges est incroyable, toutes les taches sont parties. Très pro."</p>
+                <p class="client">Sophie L. <span class="car">• BMW X3</span></p>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <p class="section-subtitle">CONFIANCE</p>
-        <h2 class="section-title">Avis de nos clients</h2>
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p style="font-size: 15px; font-style: italic;">"Résultat bluffant ! Ils ont récupéré mes sièges qui étaient très tachés. Je recommande."</p>
-            <p class="client-info">Marc D. <span style="color:var(--main-red); font-weight: 400;">• Mercedes Classe E</span></p>
-        </div>
-        <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p style="font-size: 15px; font-style: italic;">"Sérieux et méticuleux. Le lavage à domicile est vraiment pratique pour gagner du temps."</p>
-            <p class="client-info">Sophie L. <span style="color:var(--main-red); font-weight: 400;">• Mini Cooper S</span></p>
-        </div>
-    </section>
-
-    <section class="section" style="background-color: #050505;">
-        <p class="section-subtitle">RÉSERVATION</p>
-        <h2 class="section-title">Contactez-nous</h2>
+        <p class="section-subtitle">CONTACT</p>
+        <h2 class="section-title">Demander un devis</h2>
         
-        <div class="contact-list">
-            <div class="contact-item">
-                <div class="contact-icon-box">📞</div>
-                <a href="tel:0623323250" class="contact-value">06.23.32.32.50</a>
+        <div class="contact-wrapper">
+            <div>
+                <div class="contact-info-item">
+                    <div class="icon-box">📞</div>
+                    <div>
+                        <p style="font-size: 12px; color:var(--text-gray);">Téléphone</p>
+                        <a href="tel:0623323250" style="color:white; text-decoration:none; font-weight:600;">06.23.32.32.50</a>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">📍</div>
+                    <div>
+                        <p style="font-size: 12px; color:var(--text-gray);">Zone</p>
+                        <p style="font-weight:600;">Sud 77 / 89 / 45</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon-box">✉️</div>
+                    <div>
+                        <p style="font-size: 12px; color:var(--text-gray);">Email</p>
+                        <p style="font-weight:600;">dscarwash77@gmail.fr</p>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-                <div class="contact-icon-box">✉️</div>
-                <span class="contact-value">dscarwash77@gmail.fr</span>
-            </div>
-        </div>
 
-        <div class="form-container">
-            <h3 style="margin-bottom: 20px;">Obtenir un devis gratuit</h3>
-            <form action="#">
-                <div class="form-group">
-                    <label class="form-label">Nom complet</label>
-                    <input class="form-input" type="text" placeholder="Votre nom" required>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Type de véhicule</label>
-                    <select class="form-select">
-                        <option>Citadine</option>
-                        <option>Berline / SUV</option>
-                        <option>Utilitaire</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Message</label>
-                    <textarea class="form-input" style="height: 100px;" placeholder="Détails (formule, ville...)"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Envoyer la demande</button>
-            </form>
+            <div class="form-box">
+                <form>
+                    <div class="input-group">
+                        <label>Nom complet</label>
+                        <input type="text" placeholder="Votre nom" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Type de véhicule</label>
+                        <select>
+                            <option>Citadine</option>
+                            <option>Berline</option>
+                            <option>SUV / 4x4</option>
+                            <option>Utilitaire</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Message</label>
+                        <textarea rows="3" placeholder="Précisez votre ville et vos besoins..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>© 2026 Dscarwash. Tous droits réservés.</p>
-        <p style="margin-top: 10px;">Intervention Sud 77, 89 et 45</p>
+        <p style="margin-top: 5px; color: #444;">Nettoyage automobile professionnel à domicile</p>
     </footer>
 
 </body>
